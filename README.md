@@ -1,20 +1,9 @@
 # yesnt69-nixos-dotfiles
 
-NixOS 26.05 üzerinde Sway WM kurulumu. Duvar kağıdından ilham alan yeşil/koyu tema, kedi temalı SDDM ekranı ve Windows dual boot destekli
+NixOS 26.05 üzerinde Sway WM kurulumu. Duvar kağıdından ilham alan yeşil/koyu temalı
 
 
-
-![NixOS](https://img.shields.io/badge/NixOS-26.05-blue?logo=nixos)
-
-
-
-
-![Sway](https://img.shields.io/badge/WM-Sway-green)
-
-
-
-
-![Wayland](https://img.shields.io/badge/Display-Wayland-orange)
+![NixOS](https://img.shields.io/badge/NixOS-26.05-blue?logo=nixos) ![Sway](https://img.shields.io/badge/WM-Sway-green) ![Wayland](https://img.shields.io/badge/Display-Wayland-orange)
 
 
 
@@ -38,11 +27,15 @@ NixOS 26.05 üzerinde Sway WM kurulumu. Duvar kağıdından ilham alan yeşil/ko
 
 ### 1. Disk Hazırlığı (NVMe SSD için) / Disk Preparation (for NVMe SSD)
 
+⚠️ **WARNING:** Do not forget to replace the partition letters (A, B, and C) with your actual partition numbers! 
+
 ```bash
 mkfs.ext4 /dev/nvme0n1pA 
 mkfs.fat -F 32 /dev/nvme0n1pB
 mkswap /dev/nvme0n1pC
+```
 
+```bash
 mount /dev/nvme0n1pA /mnt
 mkdir -p /mnt/boot
 mount /dev/nvme0n1pB /mnt/boot
@@ -50,17 +43,30 @@ swapon /dev/nvme0n1pC
 ```
 
 ### 2. NixOS Kurulumu
+** 2.1 **
 
 ```bash
 nixos-generate-config --root /mnt
+```
 
-# Bu repodaki configuration.nix dosyasını kopyala / Copy configuration.nix file in this repo
+** 2.2 ** Bu repodaki configuration.nix dosyasını kopyala / Copy configuration.nix file in this repo
+
+```bash
 cp dotfiles/nixos/configuration.nix /mnt/etc/nixos/
+```
 
-# "burak" yazan yere kendi kullanıcı adını yaz / Replace "burak" with your username 
+** 2.3 ** Konfigürasyon içersindeki "burak" yazan yere kendi kullanıcı adını yaz / Replace "burak" with your username in configuration file 
+
+```bash
 nano /mnt/etc/nixos/configuration.nix
+```
+** 2.4 ** Bundan sonraki işlemler Nixos wiki ile aynı / The following steps are the same as with the Nixos wiki.
 
+```bash
 nixos-install
+```
+
+```bash
 reboot
 ```
 
@@ -108,13 +114,13 @@ sudo cp -r /mnt/winefi/EFI/Microsoft /boot/EFI/
 sudo umount /mnt/winefi
 ```
 
-systemd-boot otomatik olarak Windows'u algılar.
+⚠️ **UYARI:** systemd-boot otomatik olarak Windows'u algılar.
 
-systemd-boot automaticly detect windows. (If you have any idea how it work dualboot on systemd-boot you can skip this step)
+⚠️ **WARNING:** systemd-boot automaticly detect windows. (If you have any idea how it work dualboot on systemd-boot you can skip this step)
 
 ### 6. KDE Connect
 
-KDE Connect kurulumda etkin geliyor. Android cihazında KDE Connect uygulamasını yükle, aynı ağda otomatik eşleşir.
+KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 
 ## Notlar
 
@@ -126,6 +132,8 @@ KDE Connect kurulumda etkin geliyor. Android cihazında KDE Connect uygulamasın
 
 - GtkLock PAM entegrasyonu `configuration.nix` içinde mevcut
 
+- Güncel .nix konfigürasyonu yedek olarak KDE ile gelmektedir
+
 ## Notes 
 
 - Replace the username burak and the hostname nixus in configuration.nix with your own details.
@@ -135,3 +143,5 @@ KDE Connect kurulumda etkin geliyor. Android cihazında KDE Connect uygulamasın
 - Waybar allows brightness control via scrolling and audio control via clicking.
 
 - GtkLock PAM integration is available within configuration.nix.
+
+- Current .nix configuration comes with KDE for backup.
