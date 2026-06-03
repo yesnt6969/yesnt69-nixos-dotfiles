@@ -1,2 +1,0 @@
-sudo mkdir -p /etc/sddm.conf.d
-sudo nano /etc/sddm.conf.d/theme.conf

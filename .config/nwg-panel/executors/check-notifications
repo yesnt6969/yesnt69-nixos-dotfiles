@@ -1,8 +1,0 @@
-#!/nix/store/gik3rh1vz2jlgnifb9dh6vc6sxwwz9jj-bash-5.3p9/bin/bash
-
-a=$(swaync-client -c)
-
-if [ "$a" -gt "0" ]; then
-  echo bell
-  echo $a
-fi

@@ -1,7 +1,0 @@
-cd ~/dotfiles
-git init
-git add .
-git commit -m "initial commit: nixos + sway config"
-git remote add origin https://github.com/yesnt6969/yesnt69-nixos-dotfiles
-git branch -M main
-git push -u origin main
