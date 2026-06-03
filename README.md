@@ -6,10 +6,18 @@ NixOS 26.05 üzerinde Sway WM kurulumu. Duvar kağıdından ilham alan yeşil/ko
 🇬🇧 ENG:
 Sway WM installation on NixOS 26.05. Green/dark theme inspired by the wallpaper.
 
-Referans Fotoğraf / Referance Photo
+Referans Görüntüler / Referance Images
 
 <p align="center">
-  <img src="wallpapers/kedi.jpg" alt="Masaüstü Görünümü" width="700">
+  <img src="wallpapers/Ekran-Görüntüsü-1.png" alt="Referans Fotoğraf 1" width="640" height="360">
+</p>
+
+<br>
+<hr>
+<br>
+
+<p align="center">
+  <img src="wallpapers/Ekran-Görüntüsü-2.png" alt="Referans Fotoğraf 2" width="640" height="360">
 </p>
 
 
