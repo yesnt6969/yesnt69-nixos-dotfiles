@@ -1,0 +1,5 @@
+sudo rm -rf /var/lib/sddm-custom
+sudo mkdir -p /var/lib/sddm-custom/sddm-astronaut-theme
+sudo cp -r /run/current-system/sw/share/sddm/themes/sddm-astronaut-theme/. /var/lib/sddm-custom/sddm-astronaut-theme/
+sudo cp /home/burak/kedi.jpg /var/lib/sddm-custom/sddm-astronaut-theme/Backgrounds/kedi.jpg
+sudo sed -i 's|Background="Backgrounds/astronaut.png"|Background="Backgrounds/kedi.jpg"|' /var/lib/sddm-custom/sddm-astronaut-theme/Themes/astronaut.conf

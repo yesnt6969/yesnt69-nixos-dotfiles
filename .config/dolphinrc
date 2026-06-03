@@ -1,0 +1,18 @@
+[General]
+RememberOpenedTabs=false
+TabStyle=FullWidth
+Version=202
+ViewPropsTimestamp=2026,6,2,23,26,28.627
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=exrthumbnail,jpegthumbnail,imagethumbnail,svgthumbnail,ebookthumbnail,windowsexethumbnail,cursorthumbnail,comicbookthumbnail,kraorathumbnail,audiothumbnail,directorythumbnail,windowsimagethumbnail,opendocumentthumbnail,djvuthumbnail,appimagethumbnail
+
+[UiSettings]
+ColorScheme=BreezeDark

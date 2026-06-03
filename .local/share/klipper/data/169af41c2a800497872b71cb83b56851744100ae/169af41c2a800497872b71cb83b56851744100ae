@@ -1,0 +1,3 @@
+burak@nixus ~> cat /var/lib/sddm-custom/Themes/astronaut.conf | grep "^Background="
+cat: /var/lib/sddm-custom/Themes/astronaut.conf: Böyle bir dosya ya da dizin yok
+burak@nixus ~ [1|1]>

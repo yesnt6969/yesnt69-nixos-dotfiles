@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE khotnewstuff3>
+<hotnewstuffregistry>
+ <stuff category="107">
+  <name>Windows 10</name>
+  <providerid>api.kde-look.org</providerid>
+  <author>dcppdp</author>
+  <homepage>https://store.kde.org/p/1829490</homepage>
+  <licence></licence>
+  <version></version>
+  <rating>64</rating>
+  <downloads>18570</downloads>
+  <installedfile>/home/burak/.icons/Windows10Dark/*</installedfile>
+  <id>1829490</id>
+  <releasedate>2023-08-02</releasedate>
+  <summary>&lt;p>Windows 10 Dark and Laight themes.&lt;/p></summary>
+  <changelog></changelog>
+  <preview>https://images.pling.com/cache/770x540-4/img/00/00/66/35/43/1829490/preview.png</preview>
+  <previewBig>https://images.pling.com/cache/770x540-4/img/00/00/66/35/43/1829490/preview.png</previewBig>
+  <payload>https://files06.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTY3ODk2OTU1MSwibyI6IjEiLCJzIjoiZmViMGRkMzBjNTg4YmZmOWNmY2ZjZDBhOTQ5YTdmYWU5NDZhNGIxYzJiMzhjZjU0N2VmNDhjMWI0ODE4NDEwOTMyNTcyZDRhNTZkMzhkYzQ1OGM0NDkyNjQ1NThmNDFmMDU0ZDE4ZGE2NDg0NTk5MDhmNDY1M2FmNmI0MGFhMTUiLCJ0IjoxNzgwNDkyMDYyLCJzdGZwIjpudWxsLCJzdGlwIjoiMTc4LjIzMy4xNTIuMTMyIn0.WLDIlrg9BLWoDVECC97yqfkUy0iUKXAC8zCbu0P26Ns/Windows10Dark.zip</payload>
+  <tags>efi,cursor,linux,unix</tags>
+  <status>installed</status>
+ </stuff>
+</hotnewstuffregistry>

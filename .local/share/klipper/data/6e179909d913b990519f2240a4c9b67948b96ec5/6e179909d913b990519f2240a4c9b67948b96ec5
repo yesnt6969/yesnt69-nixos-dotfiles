@@ -1,0 +1,4 @@
+burak@nixus ~> grep -i waybar ~/.config/sway/config
+exec waybar
+  swaybar_command waybar
+burak@nixus ~>

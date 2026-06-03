@@ -1,0 +1,2 @@
+sudo chmod -R 755 /var/lib/sddm-custom
+sudo nano /var/lib/sddm-custom/sddm-astronaut-theme/Themes/astronaut.conf

@@ -1,0 +1,41 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["backlight", "pulseaudio", "network", "bluetooth", "battery", "custom/power"],
+
+  "clock": {
+    "format": "{:%H:%M  %d.%m.%Y}"
+  },
+  "backlight": {
+    "format": "☀ {percent}%",
+    "on-scroll-up": "brightnessctl set 5%+",
+    "on-scroll-down": "brightnessctl set 5%-"
+  },
+  "pulseaudio": {
+    "format": "♪ {volume}%",
+    "on-click": "pavucontrol"
+  },
+  "network": {
+    "format-wifi": "⇅ {essid}",
+    "format-disconnected": "✗ bağlı değil",
+    "on-click": "alacritty -e nmtui"
+  },
+  "bluetooth": {
+    "format": "BT {status}",
+    "format-connected": "BT {device_alias}",
+    "on-click": "alacritty -e bluetoothctl"
+  },
+  "battery": {
+    "format": "⚡ {capacity}%",
+    "format-critical": "!! {capacity}%",
+    "critical": 15
+  },
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "swaymsg exit",
+    "tooltip": false
+  }
+}

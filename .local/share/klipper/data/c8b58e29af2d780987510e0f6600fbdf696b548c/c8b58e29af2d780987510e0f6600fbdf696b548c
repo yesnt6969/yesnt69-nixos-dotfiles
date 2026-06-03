@@ -1,0 +1,1 @@
+grep -i waybar ~/.config/sway/config

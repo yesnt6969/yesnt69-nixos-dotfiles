@@ -1,0 +1,3 @@
+[General]
+Certificate=/home/burak/.local/share/krdpserver/krdp.crt
+CertificateKey=/home/burak/.local/share/krdpserver/krdp.key
