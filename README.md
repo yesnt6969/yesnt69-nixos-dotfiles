@@ -9,7 +9,7 @@ Sway WM installation on NixOS 26.05. Green/dark theme inspired by the wallpaper.
 Referans Fotoğraf / Referance Photo
 
 <p align="center">
-  <img src="wallpaper/kedi.jpg" alt="Masaüstü Görünümü" width="700">
+  <img src="wallpapers/kedi.jpg" alt="Masaüstü Görünümü" width="700">
 </p>
 
 
