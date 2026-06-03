@@ -1,33 +1,66 @@
 # yesnt69-nixos-dotfiles
 
+🇹🇷 TR:
 NixOS 26.05 üzerinde Sway WM kurulumu. Duvar kağıdından ilham alan yeşil/koyu temalı
+
+🇬🇧 ENG:
+Sway WM installation on NixOS 26.05. Green/dark theme inspired by the wallpaper.
+
+Referans Fotoğraf / Referance Photo
+
+<p align="center">
+  <img src="wallpaper/kedi.jpg" alt="Masaüstü Görünümü" width="700">
+</p>
 
 
 ![NixOS](https://img.shields.io/badge/NixOS-26.05-blue?logo=nixos) ![Sway](https://img.shields.io/badge/WM-Sway-green) ![Wayland](https://img.shields.io/badge/Display-Wayland-orange)
 
 
+## Bileşenler / Components
 
-## Bileşenler
-
-| Kategori | Araç |
+| Kategori / Category | Araç / Tool |
 |----------|------|
-| İşletim Sistemi | NixOS 26.05 |
-| Pencere Yöneticisi | Sway |
-| Durum Çubuğu | Waybar |
+| İşletim Sistemi / Operating System | NixOS 26.05 |
+| Pencere Yöneticisi / Window Manager | Sway |
+| Durum Çubuğu / Status Bar | Waybar |
 | Terminal | Alacritty |
-| Uygulama Başlatıcı | Wofi |
-| Giriş Yöneticisi | SDDM + sddm-astronaut-theme |
-| Kilit Ekranı | GtkLock |
-| Bildirim | Dunst |
-| Kabuk | Fish |
-| Ses | Pipewire + Wireplumber |
+| Uygulama Başlatıcı / Application Launcher | Wofi |
+| Giriş Yöneticisi / Display Manager | SDDM + sddm-astronaut-theme |
+| Kilit Ekranı / Screen Locker | GtkLock |
+| Bildirim / Notification Daemon | Dunst |
+| Kabuk / Shell | Fish |
+| Ses / Audio | Pipewire + Wireplumber |
+
+
+## Gerekenler / Requirements
+
+🇹🇷 **Kuruluma başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:**
+* **NixOS Minimal ISO:** Bilgisayarınızı başlatmak için güncel bir NixOS kurulum medyası (USB).
+* **İnternet Bağlantısı:** Kurulum esnasında paketlerin indirilebilmesi için aktif bir bağlantı (Kablolu veya Wi-Fi).
+* **Depolama:** Bu rehber varsayılan olarak bir **NVMe SSD** (`/dev/nvme0n1`) baz alınarak hazırlanmıştır. Eğer SATA SSD veya HDD kullanıyorsanız disk yollarını (`/dev/sdX` gibi) kendinize göre düzenlemelisiniz.
+
+🇬🇧 **Before starting the installation, make sure you have the following:**
+* **NixOS Minimal ISO:** A bootable NixOS installation media (USB).
+* **Internet Connection:** An active connection (Ethernet or Wi-Fi) to download packages during setup.
+* **Storage:** This guide is written based on an **NVMe SSD** (`/dev/nvme0n1`) by default. If you are using a SATA SSD or HDD, you must adjust the disk paths (e.g., `/dev/sdX`) accordingly.
+
+---
 
 
 ## Kurulum
 
 ### 1. Disk Hazırlığı (NVMe SSD için) / Disk Preparation (for NVMe SSD)
+1.1 Sisteminizin disk yapısını görmek için önce bu komutu kullanın. / To view your system's disk structure, first use this command.
 
-⚠️ **WARNING:** Do not forget to replace the partition letters (A, B, and C) with your actual partition numbers! 
+```bash
+lsblk
+```
+
+1.2 Kurulumu yapmak istediğiniz diski "cfdisk" ile bölümlendirin (benim için bu nvme0n1). / Partition the disk where you want to install it using "cfdisk" (for me this is nvme0n1).
+
+⚠️ **UYARI:** "cfdisk" terminal üzerinde grafik arayüzü olan bir programdır. Diski bölümlendirme konusunda şüpheniz varsa lütfen işlem yapmak istediğiniz diski tekrar kontrol etmekten çekinmeyin.
+
+⚠️ **WARNING:** "cfdisk" is a program with a graphical interface in the terminal. If you have any doubts about partitioning the disk, please feel free to double-check the disk you intend to work with.
 
 ```bash
 mkfs.ext4 /dev/nvme0n1pA 
@@ -42,25 +75,34 @@ mount /dev/nvme0n1pB /mnt/boot
 swapon /dev/nvme0n1pC
 ```
 
-### 2. NixOS Kurulumu
-** 2.1 **
+⚠️ **UYARI:**  Bölüm harflerini (A,B ve C) diskinize ait gerçek bölüm numaraları ile değiştirmeyi unutmayın!
 
+⚠️ **WARNING:** Do not forget to replace the partition letters (A, B, and C) with your actual partition numbers! 
+
+
+1.2 Donanım şablonunu ilerleyen adımlar için zorunludur / Hardware config is required for following steps
 ```bash
 nixos-generate-config --root /mnt
 ```
 
-** 2.2 ** Bu repodaki configuration.nix dosyasını kopyala / Copy configuration.nix file in this repo
+
+### 2. NixOS Kurulumu
+2.1 Temel kurulum için, bu repoyu geçici olarak indirip configuration.nix dosyasını kopyalayın / For basic setup, temporarily download this repository and copy the configuration.nix file.
 
 ```bash
-cp dotfiles/nixos/configuration.nix /mnt/etc/nixos/
+git clone https://github.com/yesnt6969/yesnt69-nixos-dotfiles
+cp yesnt69-nixos-dotfiles/dotfiles/nixos/configuration.nix /mnt/etc/nixos/
 ```
 
-** 2.3 ** Konfigürasyon içersindeki "burak" yazan yere kendi kullanıcı adını yaz / Replace "burak" with your username in configuration file 
+
+2.2 Konfigürasyon içersindeki "burak" yazan yere kendi kullanıcı adını yaz / Replace "burak" with your username in configuration file 
 
 ```bash
 nano /mnt/etc/nixos/configuration.nix
 ```
-** 2.4 ** Bundan sonraki işlemler Nixos wiki ile aynı / The following steps are the same as with the Nixos wiki.
+
+
+2.3 Bundan sonraki işlemler Nixos wiki ile aynı / The following steps are the same as with the Nixos wiki.
 
 ```bash
 nixos-install
@@ -70,14 +112,34 @@ nixos-install
 reboot
 ```
 
-### 3. Kullanıcı Config Dosyaları / User Config Files
+⚠️ **UYARI:** Bu komut sadece Nixos kurulumu için gerekli paketlerin kurulumunu yapar. Kurulum sonrası ince ayarlar için, kendi ayarlarınızı getirin yada sıradaki adımları uygulayın.
+
+⚠️ **WARNING:** This command only installs the packages necessary for Nixos installation. For post-installation fine-tuning, bring your own settings or follow the next steps.
+
+
+### 3. Kurulum sonrası adımları / Post-installation steps
+
+Not: Temiz kurulum önerilir. Daha önceden bulunan kurulumunuzdaki bağımlılık(lar) sorun çıkarabilir
+
+Note: A clean installation is recommended. Existing dependencies in your organization may cause problems.
 
 ```bash
 git clone https://github.com/yesnt6969/yesnt69-nixos-dotfiles
 cd yesnt69-nixos-dotfiles
 
-mkdir -p ~/.config/{sway,waybar,alacritty,wofi,gtklock,swaylock}
+```
 
+  3.1 Konfigürasyon dosyaları için dizin oluştur / Create a directory for configuration files.
+
+```bash
+mkdir -p ~/.config/{sway,waybar,alacritty,wofi,gtklock,swaylock}
+```
+
+
+
+  3.2 Kullanıcı konfigürasyon dosyalarını kopyala / Copy user configuration files
+
+```bash
 cp dotfiles/sway/config ~/.config/sway/
 cp dotfiles/waybar/config ~/.config/waybar/
 cp dotfiles/waybar/style.css ~/.config/waybar/
@@ -87,10 +149,12 @@ cp dotfiles/gtklock/config.ini ~/.config/gtklock/
 cp dotfiles/swaylock/config ~/.config/swaylock/
 ```
 
+
+
+
 ### 4. SDDM Tema Kurulumu
 
-Kendi duvar kağıdını `~/kedi.jpg` (çünkü kedileri severim) olarak kaydet, sonra:
-Save your wallpaper as `~/kedi.jpg`, (cuz i love cats) next:
+Kendi duvar kağıdını ~/kedi.jpg (çünkü kedileri severim) olarak kaydet, sonra / Save your wallpaper as ~/kedi.jpg (because I love cats), then:
 
 ```bash
 sudo mkdir -p /var/lib/sddm-custom/sddm-astronaut-theme
@@ -103,22 +167,8 @@ sudo sed -i \
 sudo chmod -R 755 /var/lib/sddm-custom
 ```
 
-### 5. Windows Dual Boot (Opsiyonel)
 
-Windows EFI partition'ını mount et ve boot dosyalarını kopyala:
-
-```bash
-sudo mkdir -p /mnt/winefi
-sudo mount /dev/nvme0n1pB /mnt/winefi
-sudo cp -r /mnt/winefi/EFI/Microsoft /boot/EFI/
-sudo umount /mnt/winefi
-```
-
-⚠️ **UYARI:** systemd-boot otomatik olarak Windows'u algılar.
-
-⚠️ **WARNING:** systemd-boot automaticly detect windows. (If you have any idea how it work dualboot on systemd-boot you can skip this step)
-
-### 6. KDE Connect
+### 5. KDE Connect
 
 KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 
@@ -132,7 +182,7 @@ KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 
 - GtkLock PAM entegrasyonu `configuration.nix` içinde mevcut
 
-- Güncel .nix konfigürasyonu yedek olarak KDE ile gelmektedir
+- Güncel .nix konfigürasyonu yedek masaüstü ortamı olarak KDE ile gelmektedir
 
 ## Notes 
 
