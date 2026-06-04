@@ -1,0 +1,90 @@
+/* YESNT69 Rofi Koyu Yeşil Yarı Saydam Tema */
+
+configuration {
+    modi: "window";
+    font: "Noto Sans 10";
+    show-icons: true;
+    icon-theme: "breeze";
+    terminal: "alacritty"; /* veya kullandığın terminal adı */
+}
+
+* {
+    /* Renk Tanımlamaları */
+    bg-main:     rgba(13, 18, 8, 0.85);  /* Referansa dayalı ana arka plan */
+    bg-input:    rgba(17, 17, 17, 0.8);  /* Giriş alanı arka planı */
+    border-green: #2d5a1b;               /* Yeşil çerçeve */
+    text-green:   #8dc63f;               /* Fosforlu yeşil yazı */
+    text-white:   #ffffff;
+    transparent:  transparent;
+}
+
+window {
+    background-color: @bg-main;
+    border:           1px;
+    border-color:     @border-green;
+    border-radius:    16px;
+    padding:          16px; /* outer-box padding */
+    width:            500px; /* Göz kararı ayarladım */
+}
+
+mainbox {
+    background-color: @transparent;
+    children:         [ inputbar, listview ];
+}
+
+inputbar {
+    background-color: @bg-input;
+    border:           1px;
+    border-color:     @border-green;
+    border-radius:    4px;
+    padding:          8px;
+    margin:           0px 0px 12px 0px;
+    children:         [ prompt, entry ];
+}
+
+prompt {
+    background-color: @transparent;
+    text-color:       @text-green;
+    font:             "Sans Bold 14";
+}
+
+entry {
+    background-color: @transparent;
+    text-color:       @text-green;
+    font:             "Sans 14";
+    placeholder:      "Pencere ara...";
+    placeholder-color: #555555;
+}
+
+listview {
+    background-color: @transparent;
+    columns:          1;
+    lines:            8;
+    cycle:            true;
+    dynamic:          true;
+    layout:           vertical;
+}
+
+element {
+    background-color: @transparent;
+    text-color:       @text-white;
+    border-radius:    4px;
+    padding:          6px;
+    spacing:          8px;
+}
+
+element selected {
+    background-color: @border-green;
+    text-color:       @text-green;
+}
+
+element-icon {
+    background-color: @transparent;
+    size:             24px;
+}
+
+element-text {
+    background-color: @transparent;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
