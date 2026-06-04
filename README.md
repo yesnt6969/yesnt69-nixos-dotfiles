@@ -54,6 +54,21 @@ Referans Görüntüler / Referance Images
 
 ---
 
+## Donanım ve Sürücü Bilgisi / Hardware & Driver Info
+
+> 💡 **TR:** Bu dal (`nvidia` branch), sistemin harici **NVIDIA RTX 3050** ekran kartı sürücüleri ve yamaları aktif edilerek konfigüre edilmiştir. Sadece dahili AMD Radeon (APU) grafik işlemcisinin aktif olduğu temiz yapılandırma için lütfen `main` dalına göz atın.
+
+> 💡 **ENG:** This branch (`nvidia`) is configured with the dedicated **NVIDIA RTX 3050** graphics card drivers and patches enabled. For the clean configuration where only the internal AMD Radeon (APU) graphics processor is active, please check the `main` branch.
+
+### Test Edilen Sistem Özellikleri / Tested System Specifications
+
+* **İşlemci / CPU:** AMD Ryzen 5 5600H with Radeon Graphics
+* **Ekran Kartı / GPU:** NVIDIA GeForce RTX 3050 Laptop GPU (4GB) *(Bu dalda aktiftir / Active on this branch)*
+* **Bellek / RAM:** 16 GB DDR4
+* **Depolama / Storage:** 512 GB NVMe SSD
+
+---
+
 
 ## Kurulum
 
