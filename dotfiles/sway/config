@@ -15,14 +15,19 @@ bindsym $mod+d exec $menu
 bindsym $mod+q kill
 bindsym $mod+Shift+e exec swaymsg exit
 bindsym $mod+Shift+r reload
+bindsym $mod+Tab exec rofi -show window
 
-# Focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+# --- EKRAN GÖRÜNTÜSÜ KISAYOLLARI ---
 
-# Move
+# 1. Tüm Ekranı Al ve Resimler Klasörüne Kaydet (PrintScreen Tuşu)
+bindsym Print exec grim ~/Resimler/Ekran_Goruntusu_$(date +%Y%m%d-%H%M%S).png
+
+# 2. Sadece Seçilen Bir Bölgenin Görüntüsünü Al ve Kaydet (Win + Shift + S)
+bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Resimler/Ekran_Goruntusu_$(date +%Y%m%d-%H%M%S).png
+
+# 3. Sadece Seçilen Bölgeyi Al ve Doğrudan Panoya Kopyala (Dosya oluşturmaz, direkt Ctrl+V için)
+bindsym $mod+Ctrl+s exec grim -g "$(slurp)" - | wl-copy
+
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
@@ -51,8 +56,8 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+Escape exec gtklock -b 50
 
 # Ekran görüntüsü
-bindsym Print exec grim ~/Pictures/$(date +%Y%m%d_%H%M%S).png
-bindsym $mod+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+# bindsym Print exec grim ~/Pictures/$(date +%Y%m%d_%H%M%S).png
+# bindsym $mod+Print exec grim -g "$(slurp)" ~/Pictures/$(date +%Y%m%d_%H%M%S).png
 
 # Ses
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
@@ -61,7 +66,7 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle
 
 # Autostart
 exec waybar
-exec dunst
+
 
 # Görünüm
 default_border pixel 2
@@ -81,4 +86,5 @@ input "type:keyboard" {
   xkb_model pc104
   xkb_variant ""
 }
+
 
