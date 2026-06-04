@@ -1,0 +1,25 @@
+[global]
+    font = Sans 14
+    origin = top-right
+    offset = (20, 20)
+    width = 350
+    height = (100, 150)
+    frame_width = 1
+    frame_color = "#2d5a1b"
+    corner_radius = 16
+    padding = 16
+    horizontal_padding = 16
+    icon_position = left
+    max_icon_size = 48
+
+[urgency_low]
+    background = "#0d1208d9"
+    foreground = "#ffffff"
+    frame_color = "#2d5a1b"
+    timeout = 3
+
+[urgency_normal]
+    background = "#0d1208d9"
+    foreground = "#ffffff"
+    frame_color = "#2d5a1b"
+    timeout = 5
