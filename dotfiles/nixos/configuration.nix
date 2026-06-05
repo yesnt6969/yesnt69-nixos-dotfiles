@@ -167,6 +167,7 @@
     git
     wget
     fastfetch
+    telegram-desktop
     rofi
     alacritty # 4 Terminal app
     waybar # Sway essentials start here
