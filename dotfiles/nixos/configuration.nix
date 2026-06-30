@@ -74,13 +74,6 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "sddm-astronaut-theme";
-    settings = {
-      Theme = {
-        ThemeDir = "/var/lib/sddm-custom";
-        Current = "sddm-astronaut-theme";
-      };
-    };
   };
 
 
@@ -145,6 +138,9 @@
     swayidle
     grim
     slurp
+    nerd-fonts.iosevka
+    iosevka
+    fish
     wl-clipboard 
     kdePackages.kio # KDE Infrastructure start here
     kdePackages.kio-extras
@@ -153,7 +149,6 @@
     kdePackages.breeze # Theme Infrastructure start here
     kdePackages.breeze-icons 
     kdePackages.qtmultimedia
-    sddm-astronaut
     networkmanagerapplet # Other system integration start here
     kdePackages.plasma-nm
     kdePackages.plasma-pa 
