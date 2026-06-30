@@ -182,8 +182,6 @@ KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 
 - `configuration.nix` içindeki `burak` kullanıcı adını ve `nixus` hostname'ini kendi bilgilerinle değiştir
 
-- SDDM arka planı her `nixos-rebuild switch` sonrası sıfırlanır, 4. adımı tekrar çalıştırmak gerekir
-
 - Waybar scroll ile parlaklık, tıklayarak ses kontrolü yapılabilir
 
 - GtkLock PAM entegrasyonu `configuration.nix` içinde mevcut
@@ -193,8 +191,6 @@ KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 ## Notes 
 
 - Replace the username burak and the hostname nixus in configuration.nix with your own details.
-
-- The SDDM background resets after every nixos-rebuild switch; you will need to rerun step 4.
 
 - Waybar allows brightness control via scrolling and audio control via clicking.
 
