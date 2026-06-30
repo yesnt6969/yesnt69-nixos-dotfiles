@@ -174,32 +174,13 @@ cp dotfiles/swaylock/config ~/.config/swaylock/
 
 
 
-
-### 4. SDDM Tema Kurulumu
-
-Kendi duvar kağıdını ~/kedi.jpg (çünkü kedileri severim) olarak kaydet, sonra / Save your wallpaper as ~/kedi.jpg (because I love cats), then:
-
-```bash
-sudo mkdir -p /var/lib/sddm-custom/sddm-astronaut-theme
-sudo cp -r /run/current-system/sw/share/sddm/themes/sddm-astronaut-theme/. \
-  /var/lib/sddm-custom/sddm-astronaut-theme/
-sudo cp ~/kedi.jpg /var/lib/sddm-custom/sddm-astronaut-theme/Backgrounds/kedi.jpg
-sudo sed -i \
-  's|Background="Backgrounds/astronaut.png"|Background="Backgrounds/kedi.jpg"|' \
-  /var/lib/sddm-custom/sddm-astronaut-theme/Themes/astronaut.conf
-sudo chmod -R 755 /var/lib/sddm-custom
-```
-
-
-### 5. KDE Connect
+### 4. KDE Connect
 
 KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 
 ## Notlar
 
 - `configuration.nix` içindeki `burak` kullanıcı adını ve `nixus` hostname'ini kendi bilgilerinle değiştir
-
-- SDDM arka planı her `nixos-rebuild switch` sonrası sıfırlanır, 4. adımı tekrar çalıştırmak gerekir
 
 - Waybar scroll ile parlaklık, tıklayarak ses kontrolü yapılabilir
 
@@ -210,8 +191,6 @@ KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 ## Notes 
 
 - Replace the username burak and the hostname nixus in configuration.nix with your own details.
-
-- The SDDM background resets after every nixos-rebuild switch; you will need to rerun step 4.
 
 - Waybar allows brightness control via scrolling and audio control via clicking.
 
