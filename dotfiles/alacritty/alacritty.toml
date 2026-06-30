@@ -1,38 +1,52 @@
+[env]
+TERM = "alacritty"
+
 [font]
-size = 18.0
+size = 16.0
 
 [font.normal]
-family = "monospace"
+family = "Iosevka Nerd Font"
+style = "Normal"
 
-[colors.primary]
-background = "#0d1208"
-foreground = "#8dc63f"
+[font.bold]
+family = "Iosevka Nerd Font"
+style = "Bold"
 
-[colors.cursor]
-text = "#0d1208"
-cursor = "#c8a44a"
-
-[colors.normal]
-black   = "#111111"
-red     = "#8b2020"
-green   = "#2d5a1b"
-yellow  = "#c8a44a"
-blue    = "#3a6b2a"
-magenta = "#5a7a2a"
-cyan    = "#4a8a3a"
-white   = "#8dc63f"
-
-[colors.bright]
-black   = "#2a2a2a"
-red     = "#c04040"
-green   = "#5a9e2f"
-yellow  = "#c8d84a"
-blue    = "#6aab4a"
-magenta = "#8aaa4a"
-cyan    = "#7aba6a"
-white   = "#c8d84a"
+[font.italic]
+family = "Iosevka Nerd Font"
+style = "Italic"
 
 [window]
-opacity = 0.75
-padding = { x = 8, y = 8 }
-startup_mode = "Maximized"
+decorations = "none"
+opacity = 0.85
+padding = { x = 12, y = 12 }
+
+[colors.primary]
+background = "#141814"
+foreground = "#e6eedc"
+
+[colors.cursor]
+cursor = "#5cb82a"
+
+[colors.normal]
+black = "#1f241f"
+red = "#e05353"
+green = "#5cb82a"
+yellow = "#d1cc41"
+blue = "#4382ab"
+magenta = "#a173bd"
+cyan = "#50bfa3"
+white = "#e6eedc"
+
+[colors.bright]
+black = "#2c332c"
+red = "#f06c6c"
+green = "#76cc43"
+yellow = "#e3de59"
+blue = "#5fa3cc"
+magenta = "#be95db"
+cyan = "#6ed9bd"
+white = "#ffffff"
+
+[terminal.shell]
+program = "/usr/bin/fish"
