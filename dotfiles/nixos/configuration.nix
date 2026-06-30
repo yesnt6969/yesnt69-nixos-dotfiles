@@ -105,13 +105,6 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
-    theme = "sddm-astronaut-theme";
-    settings = {
-      Theme = {
-        ThemeDir = "/var/lib/sddm-custom";
-        Current = "sddm-astronaut-theme";
-      };
-    };
   };
 
 
@@ -168,7 +161,6 @@
     wget
     fastfetch
     telegram-desktop
-    rofi
     alacritty # 4 Terminal app
     waybar # Sway essentials start here
     wofi
@@ -189,7 +181,6 @@
     kdePackages.breeze # Theme Infrastructure start here
     kdePackages.breeze-icons 
     kdePackages.qtmultimedia
-    sddm-astronaut
     networkmanagerapplet # Other system integration start here
     kdePackages.plasma-nm
     kdePackages.plasma-pa 
