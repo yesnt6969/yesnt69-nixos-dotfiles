@@ -174,24 +174,7 @@ cp dotfiles/swaylock/config ~/.config/swaylock/
 
 
 
-
-### 4. SDDM Tema Kurulumu
-
-Kendi duvar kağıdını ~/kedi.jpg (çünkü kedileri severim) olarak kaydet, sonra / Save your wallpaper as ~/kedi.jpg (because I love cats), then:
-
-```bash
-sudo mkdir -p /var/lib/sddm-custom/sddm-astronaut-theme
-sudo cp -r /run/current-system/sw/share/sddm/themes/sddm-astronaut-theme/. \
-  /var/lib/sddm-custom/sddm-astronaut-theme/
-sudo cp ~/kedi.jpg /var/lib/sddm-custom/sddm-astronaut-theme/Backgrounds/kedi.jpg
-sudo sed -i \
-  's|Background="Backgrounds/astronaut.png"|Background="Backgrounds/kedi.jpg"|' \
-  /var/lib/sddm-custom/sddm-astronaut-theme/Themes/astronaut.conf
-sudo chmod -R 755 /var/lib/sddm-custom
-```
-
-
-### 5. KDE Connect
+### 4. KDE Connect
 
 KDE Connect kurulumda etkin geliyor / KDE Connect comes already activated
 
