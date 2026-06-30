@@ -172,6 +172,9 @@
     swayr
     fuzzel
     grim
+    fish
+    iosevka
+    nerd-fonts.iosevka
     slurp
     wl-clipboard 
     kdePackages.kio # KDE Infrastructure start here
