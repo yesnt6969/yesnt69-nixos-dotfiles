@@ -33,7 +33,7 @@ Referans Görüntüler / Referance Images
 | Durum Çubuğu / Status Bar | Waybar |
 | Terminal | Alacritty |
 | Uygulama Başlatıcı / Application Launcher | Wofi |
-| Giriş Yöneticisi / Display Manager | SDDM + sddm-astronaut-theme |
+| Giriş Yöneticisi / Display Manager | SDDM |
 | Kilit Ekranı / Screen Locker | GtkLock |
 | Bildirim / Notification Daemon | Dunst |
 | Kabuk / Shell | Fish |
@@ -142,37 +142,45 @@ reboot
 
 ### 3. Kurulum sonrası adımları / Post-installation steps
 
-Not: Temiz kurulum önerilir. Daha önceden bulunan kurulumunuzdaki bağımlılık(lar) sorun çıkarabilir
+Not: Temiz kurulum önerilir. Daha önceden bulunan kurulumunuzdaki bağımlılık(lar) sorun çıkarabilir.
 
-Note: A clean installation is recommended. Existing dependencies in your organization may cause problems.
+
+Not: Konfigürasyonların hepsi [yesnt69-config-files](https://github.com/yesnt6969/yesnt69-config-files) deposuna taşındı.
+
+---
+
+Note: A clean installation is recommended. Existing dependencies in your setup may cause problems.
+
+
+Note: All configurations have been moved to the [yesnt69-config-files](https://github.com/yesnt6969/yesnt69-config-files) repository.
 
 ```bash
-git clone https://github.com/yesnt6969/yesnt69-nixos-dotfiles
-cd yesnt69-nixos-dotfiles
-
+git clone https://github.com/yesnt6969/yesnt69-config-files.git
+```
+```bash
+cd yesnt69-config-files
 ```
 
-  3.1 Konfigürasyon dosyaları için dizin oluştur / Create a directory for configuration files.
+  # 3.1 Konfigürasyon dosyaları için dizin oluştur / Create a directory for configuration files.
 
 ```bash
-mkdir -p ~/.config/{sway,waybar,alacritty,wofi,gtklock,swaylock}
-```
-
-
-
-  3.2 Kullanıcı konfigürasyon dosyalarını kopyala / Copy user configuration files
-
-```bash
-cp dotfiles/sway/config ~/.config/sway/
-cp dotfiles/waybar/config ~/.config/waybar/
-cp dotfiles/waybar/style.css ~/.config/waybar/
-cp dotfiles/alacritty/alacritty.toml ~/.config/alacritty/
-cp dotfiles/wofi/style.css ~/.config/wofi/
-cp dotfiles/gtklock/config.ini ~/.config/gtklock/
-cp dotfiles/swaylock/config ~/.config/swaylock/
+mkdir -p ~/.config/{alacritty,dunst,fish,fuzzel,gtklock,nvim,sway,swaylock,waybar,wofi}
 ```
 
 
+  # 3.2 Hepsini kopyalamak isterseniz / If you want to copy all of them:
+```bash
+cp -r alacritty/* ~/.config/alacritty/
+cp -r dunst/* ~/.config/dunst/
+cp -r fish/* ~/.config/fish/
+cp -r fuzzel/* ~/.config/fuzzel/
+cp -r gtklock/* ~/.config/gtklock/
+cp -r nvim/* ~/.config/nvim/
+cp -r sway/* ~/.config/sway/
+cp -r swaylock/* ~/.config/swaylock/
+cp -r waybar/* ~/.config/waybar/
+cp -r wofi/* ~/.config/wofi/
+```
 
 ### 4. KDE Connect
 
